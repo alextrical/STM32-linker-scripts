@@ -1,0 +1,187 @@
+/* SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause) */
+/*
+ * Copyright (C) STMicroelectronics 2022 - All Rights Reserved
+ * Author: STM32CubeMX code generation for STMicroelectronics.
+ */
+
+/* For more information on Device Tree configuration, please refer to
+ * https://wiki.st.com/stm32mpu/wiki/Category:Device_tree_configuration
+ */
+
+/dts-v1/;
+#include <dt-bindings/pinctrl/stm32-pinfunc.h>
+#include <dt-bindings/clock/stm32mp1-clksrc.h>
+#include <dt-bindings/soc/stm32mp15-etzpc.h>
+
+#include "stm32mp157.dtsi"
+#include "stm32mp15xa.dtsi"
+#include "stm32mp15xxaa-pinctrl.dtsi"
+
+/* USER CODE BEGIN includes */
+/* USER CODE END includes */
+
+/ {
+	model = "STMicroelectronics custom STM32CubeMX board - openstlinux-5.15-yocto-kirkstone-mp1-v22.06.15";
+	compatible = "st,stm32mp157a-stm32mp157-mx", "st,stm32mp157";
+
+	/* !!! log : Warning - no DDR config found: 'memory' node not generated  !!! */
+
+	/*
+	memory@??? {
+		reg = < ??? >;
+	};
+	*/
+
+	reserved-memory {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		ranges;
+
+		/* USER CODE BEGIN reserved-memory */
+		/* USER CODE END reserved-memory */
+	};
+
+	/* USER CODE BEGIN root */
+	/* USER CODE END root */
+
+	clocks {
+		/* USER CODE BEGIN clocks */
+		/* USER CODE END clocks */
+
+		clk_lse: clk-lse {
+
+			/* USER CODE BEGIN clk_lse */
+			/* USER CODE END clk_lse */
+		};
+
+		clk_hse: clk-hse {
+
+			/* USER CODE BEGIN clk_hse */
+			/* USER CODE END clk_hse */
+		};
+	};
+
+}; /*root*/
+
+/*Warning: the configuration of the secured GPIOs should be added in (addons) User Section*/
+&pinctrl {
+	/* USER CODE BEGIN pinctrl */
+	/* USER CODE END pinctrl */
+};
+
+&pinctrl_z {
+	/* USER CODE BEGIN pinctrl_z */
+	/* USER CODE END pinctrl_z */
+};
+
+&bsec{
+	status = "okay";
+
+	/* USER CODE BEGIN bsec */
+	/* USER CODE END bsec */
+};
+
+&etzpc{
+	status = "okay";
+	st,decprot = <
+	/*"Non Secured" peripherals*/
+	DECPROT(STM32MP1_ETZPC_DMA1_ID, DECPROT_NS_RW, DECPROT_UNLOCK)
+	DECPROT(STM32MP1_ETZPC_DMAMUX_ID, DECPROT_NS_RW, DECPROT_UNLOCK)
+	/*"Secured" peripherals*/
+	DECPROT(STM32MP1_ETZPC_STGENC_ID, DECPROT_S_RW, DECPROT_UNLOCK)
+	/*"Mcu Isolation" peripherals*/
+	DECPROT(STM32MP1_ETZPC_DMA2_ID, DECPROT_MCU_ISOLATION, DECPROT_UNLOCK)
+
+	/*Restriction: following IDs are not managed  - please to use User-Section if needed:
+		  STM32MP1_ETZPC_SRAMx_ID  STM32MP1_ETZPC_RETRAM_ID  STM32MP1_ETZPC_BKPSRAM_ID*/
+
+	/* USER CODE BEGIN etzpc_decprot */
+		/*STM32CubeMX generates a basic and standard configuration for ETZPC.
+		Additional device configurations can be added here if needed.
+		"etzpc" node could be also overloaded in "addons" User-Section.*/
+	/* USER CODE END etzpc_decprot */
+	>;
+
+	/* USER CODE BEGIN etzpc */
+	/* USER CODE END etzpc */
+};
+
+&rcc{
+	status = "okay";
+
+	/* USER CODE BEGIN rcc */
+	/* USER CODE END rcc */
+
+	st,clksrc = <
+		CLK_MPU_PLL1P
+		CLK_AXI_HSI
+		CLK_MCU_HSI
+		CLK_PLL12_HSI
+		CLK_PLL3_HSI
+		CLK_PLL4_HSI
+		CLK_RTC_LSI
+		CLK_MCO1_DISABLED
+		CLK_MCO2_DISABLED
+	>;
+	st,clkdiv = <
+		1 		/*MPU*/
+		0 		/*AXI*/
+		0 		/*MCU*/
+		0 		/*APB1*/
+		0 		/*APB2*/
+		0 		/*APB3*/
+		0 		/*APB4*/
+		0 		/*APB5*/
+		0 		/*RTC*/
+		0 		/*MCO1*/
+		0 		/*MCO2*/
+	>;
+	st,pkcs = <
+		CLK_CKPER_DISABLED
+		CLK_ETH_DISABLED
+		CLK_SDMMC12_DISABLED
+		CLK_STGEN_HSI
+		CLK_USBPHY_DISABLED
+		CLK_SPI2S1_DISABLED
+		CLK_SPI2S23_DISABLED
+		CLK_SPI45_DISABLED
+		CLK_SPI6_DISABLED
+		CLK_I2C46_DISABLED
+		CLK_SDMMC3_DISABLED
+		CLK_ADC_DISABLED
+		CLK_CEC_DISABLED
+		CLK_I2C12_DISABLED
+		CLK_I2C35_DISABLED
+		CLK_UART1_DISABLED
+		CLK_UART24_DISABLED
+		CLK_UART35_DISABLED
+		CLK_UART6_DISABLED
+		CLK_UART78_DISABLED
+		CLK_SPDIF_DISABLED
+		CLK_SAI1_DISABLED
+		CLK_SAI2_DISABLED
+		CLK_SAI3_DISABLED
+		CLK_SAI4_DISABLED
+		CLK_LPTIM1_DISABLED
+		CLK_LPTIM23_DISABLED
+		CLK_LPTIM45_DISABLED
+	>;
+};
+
+&rtc{
+	status = "okay";
+
+	/* USER CODE BEGIN rtc */
+	/* USER CODE END rtc */
+};
+
+&tamp{
+	status = "okay";
+
+	/* USER CODE BEGIN tamp */
+	/* USER CODE END tamp */
+};
+
+/* USER CODE BEGIN addons */
+/* USER CODE END addons */
+
