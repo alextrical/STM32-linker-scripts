@@ -1,0 +1,17 @@
+| :yellow_heart: | STM32F301C6<br>STM32F301C8 | Generic Board | **2.3.0** |  |
+| :yellow_heart: | STM32F301K6<br>STM32F301K8 | Generic Board | **2.3.0** |  |
+| :yellow_heart: | STM32F301R6<br>STM32F301R8 | Generic Board | **2.3.0** |  |
+| :yellow_heart: | STM32F303C6<br>STM32F303C8 | Generic Board | **2.3.0** |  |
+| :yellow_heart: | STM32F303R6<br>STM32F303R8 | Generic Board | **2.3.0** |  |
+| :yellow_heart: | STM32F318C8 | Generic Board | **2.3.0** |  |
+| :yellow_heart: | STM32F318K8 | Generic Board | **2.3.0** |  |
+| :yellow_heart: | STM32F328C8 | Generic Board | **2.3.0** |  |
+| :yellow_heart: | STM32F334C4<br>STM32F334C6<br>STM32F334C8 | Generic Board | **2.3.0** |  |
+| :yellow_heart: | STM32F334R6<br>STM32F334R8 | Generic Board | **2.3.0** |  |
+| :yellow_heart: | STM32F358CC | Generic Board | **2.3.0** |  |
+| :yellow_heart: | STM32F358RC | Generic Board | **2.3.0** |  |
+| :yellow_heart: | STM32F358VC | Generic Board | **2.3.0** |  |
+| :yellow_heart: | STM32F378CC | Generic Board | **2.3.0** |  |
+| :yellow_heart: | STM32F378RC | Generic Board | **2.3.0** |  |
+| :yellow_heart: | STM32F378VC | Generic Board | **2.3.0** |  |
+| :yellow_heart: | STM32F398VE | Generic Board | **2.3.0** |  |

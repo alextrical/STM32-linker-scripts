@@ -1,0 +1,1 @@
+| :yellow_heart: | STM32F410T8<br>STM32F410TB | Generic Board | **2.3.0** |  |
