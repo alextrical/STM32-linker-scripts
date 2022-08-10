@@ -1,0 +1,6 @@
+^(.|\r?\n)*SystemClock_Config\(void\)\r?\n{\r?\n --> ''
+{0} --> {}
+\r?\n}(.|\r?\n)*$ --> ''
+
+FLASH.*0x08000000.* --> FLASH    (rx)    : ORIGIN = 0x08000000 + LD_FLASH_OFFSET, LENGTH = LD_MAX_SIZE - LD_FLASH_OFFSET
+FLASH.*0x8000000.* --> FLASH    (rx)    : ORIGIN = 0x8000000 + LD_FLASH_OFFSET, LENGTH = LD_MAX_SIZE - LD_FLASH_OFFSET
