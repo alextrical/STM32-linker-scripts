@@ -1,0 +1,14 @@
+#Clean up all folders that contain "ldscript.ld"
+#find . -type f -name "*ldscript.ld" -exec dirname "{}" \; |sort -u
+find . -type f -name "*ldscript.ld" -exec dirname "{}" \; |sort -u  | xargs rm -rf --
+
+find . -name "PeripheralPins.c" -exec rm -rf {} \;
+find . -name "PinNamesVar.h" -exec rm -rf {} \;
+find . -name "variant_generic.cpp" -exec rm -rf {} \;
+find . -name "variant_generic.h" -exec rm -rf {} \;
+
+
+find . -name "PeripheralPins_*.c" -exec rm -rf {} \;
+find . -name "readme_*.txt" -exec rm -rf {} \;
+find . -name "variant_*.cpp" -exec rm -rf {} \;
+find . -name "variant_*.h" -exec rm -rf {} \;
